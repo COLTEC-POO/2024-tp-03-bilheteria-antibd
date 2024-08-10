@@ -14,7 +14,7 @@ public class Teatro extends Evento implements Serializable {
         for(Ingresso atual : this.IngressoTea)
             if(atual != null)
                 //retorna false caso mais que 20% dos ingressos sejam Vip
-                if(atual instanceof InGreVip && NumVip <=(int) (QuanIn * 20)/100)
+                if(atual instanceof InGreVip && NumVip <=(QuanIn * 20)/100)
                     NumVip++;
                 else
                     return false;

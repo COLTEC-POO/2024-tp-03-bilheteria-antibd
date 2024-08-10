@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.time.Year;
+import java.util.Arrays;
 
 public class Tela {
     private final JFrame TelaExibida;
@@ -120,7 +121,18 @@ public class Tela {
             Filme.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
+                    Evento[] Dest;
 
+                    JButton[] Filmes = new JButton[0];
+                    Deserializador Des = new Deserializador();
+                    Dest = Des.Deserializa("Filme");
+
+                    for(int i = 0; i < Dest.length; i++){
+                        Filmes[i] = new JButton(Dest[i].getNome());
+                        Filmes = Arrays.copyOf( Filmes,(i + 1) );
+                    }
+
+                    PaneParaSelEve(Filmes);
                 }
             });
         }
@@ -157,6 +169,37 @@ public class Tela {
         );
     }
 
+    private void PaneParaSelEve(JButton[] EventsToAdd){
+        JPanel PaneParaSelEvent = new JPanel();
+        JButton Voltar = new JButton();
+        for (JButton ButAt : EventsToAdd) {
+            PaneParaSelEvent.add(ButAt);
+        }
+
+        PaneParaSelEvent.add(Voltar);
+
+        // Remova o painel atual e adicione o novo painel
+        TelaExibida.remove(PainelAtual);
+        PainelAtual = PainelTipoDeEvento;
+        PainelAtual.setBackground(Color.GREEN);
+        TelaExibida.add(PainelAtual);
+        TelaExibida.revalidate();
+        TelaExibida.repaint();
+
+        Voltar.addActionListener(new ActionListener() {
+             @Override
+             public void actionPerformed(ActionEvent e) {
+                 TelaExibida.remove(PainelAtual);
+                 PainelAtual = PainelCriaEvento;
+                 PainelAtual.setBackground(Color.GREEN);
+                 TelaExibida.add(PainelAtual);
+                 TelaExibida.revalidate();
+                 TelaExibida.repaint();
+             }
+        }
+
+        );
+    }
     private void PaneComOQuest(Evento Eventos) {
         // Crie um novo painel com o questionário
         JPanel Quest = new JPanel();

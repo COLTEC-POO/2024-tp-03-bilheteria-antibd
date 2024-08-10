@@ -20,8 +20,8 @@ public class Deserializador {
                 int i = 0;
                 for (File arquivo : arquivos) {
                     //parte responsavel por alocar dinamicamente o array de Strings
-                    String[] novoArray = Arrays.copyOf(TodosOsNomes,(i + 1));
-                    TodosOsNomes = novoArray;
+                    TodosOsNomes = Arrays.copyOf(TodosOsNomes,(i + 1));
+
                     //
 
                     if (arquivo.isFile()) {
@@ -56,12 +56,11 @@ public class Deserializador {
             for (String parte : partes) {
                 //System.out.println(parte);
                 if (parte.equals(Tipo)){
-                    Evento atual = null;
+                    Evento atual;
                     //tenho que consertar isso
                     //System.out.println(arquivo);
                     try {
-                        Evento[] novoArray = Arrays.copyOf(Criados,(i + 1));
-                        Criados = novoArray;
+                        Criados = Arrays.copyOf(Criados,(i + 1));
 
                         FileInputStream fileIn = new FileInputStream("Eventos/" + arquivo);
                         ObjectInputStream in = new ObjectInputStream(fileIn);
