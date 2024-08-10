@@ -49,34 +49,34 @@ public class Deserializador {
         EventosCriados = ListarArquivos();
         Evento[] Criados = new Evento[0];
 
-        int i=0;
+        int i = 0;
         for(String arquivo : EventosCriados ){
             String[] partes = arquivo.split("\\.");
 
             for (String parte : partes) {
-                System.out.println(parte);
+                //System.out.println(parte);
                 if (parte.equals(Tipo)){
                     Evento atual = null;
                     //tenho que consertar isso
-                    System.out.println(arquivo);
-                    try (FileInputStream fileIn = new FileInputStream(arquivo);
-                        ObjectInputStream in = new ObjectInputStream(fileIn)
-                    ){
+                    //System.out.println(arquivo);
+                    try {
+                        Evento[] novoArray = Arrays.copyOf(Criados,(i + 1));
+                        Criados = novoArray;
+
+                        FileInputStream fileIn = new FileInputStream("Eventos/" + arquivo);
+                        ObjectInputStream in = new ObjectInputStream(fileIn);
                         atual = (Evento) in.readObject();
-                        System.out.println("teste5");
+                        Criados[i] = atual;
                     } catch (Exception e) {
                         e.printStackTrace();
-                        System.out.println("teste4");
+                        //System.out.println("teste4");
                     }
                     i++;
-                    Evento[] novoArray = Arrays.copyOf(Criados,(i + 1));
-                    Criados = novoArray;
-                    Criados[i] = atual;
-                    System.out.println("teste3");
+                    //System.out.println("teste3");
                 }
-                System.out.println("teste2");
+                //System.out.println("teste2");
             }
-            System.out.println("teste1");
+            //System.out.println("teste1");
         }
         return Criados;
 

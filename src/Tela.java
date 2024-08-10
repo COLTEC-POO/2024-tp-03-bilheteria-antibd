@@ -157,7 +157,7 @@ public class Tela {
         );
     }
 
-    private void PaneComOQuest(Evento Evento) {
+    private void PaneComOQuest(Evento Eventos) {
         // Crie um novo painel com o questionário
         JPanel Quest = new JPanel();
         JButton Nome = new JButton("Nome");
@@ -170,8 +170,8 @@ public class Tela {
         Nome.addActionListener(new ActionListener() {
              @Override
              public void actionPerformed(ActionEvent e) {
-                Evento.setNome(JOptionPane.showInputDialog(TelaExibida,"Digite qual vai ser o nome do seu evento"));
-                JOptionPane.showMessageDialog(TelaExibida, "Nome: " + Evento.getNome());
+                Eventos.setNome(JOptionPane.showInputDialog(TelaExibida,"Digite qual vai ser o nome do seu evento"));
+                JOptionPane.showMessageDialog(TelaExibida, "Nome: " + Eventos.getNome());
              }
         });
 
@@ -181,11 +181,11 @@ public class Tela {
                 int a;
                 do {
 
-                    Evento.setData(JOptionPane.showInputDialog(TelaExibida,
+                    Eventos.setData(JOptionPane.showInputDialog(TelaExibida,
                     "Digite qual vai ser a Data do seu evento no modelo dd/mm/aaaa"));
 
                     try {
-                        String[] Datas = Evento.getData().split("/");
+                        String[] Datas = Eventos.getData().split("/");
                         int dia = Integer.parseInt(Datas[0]);
                         int mes = Integer.parseInt(Datas[1]);
 
@@ -232,12 +232,12 @@ public class Tela {
                         int a = 0;
                         while(a == 0) {
                             a = 1;
-                            Evento.setHora(JOptionPane.showInputDialog(TelaExibida,
+                            Eventos.setHora(JOptionPane.showInputDialog(TelaExibida,
                             "Digite qual vai ser a Hora em que seu evento" +
                                     "vai acontecer escreva no modelo HH:MM"));
 
                             //variavel ultilizada para varificar se a hora esta no modelo certo
-                            String Veri = Evento.getHora();
+                            String Veri = Eventos.getHora();
 
                             try {
                                 String[] Horas = Veri.split(":");
@@ -267,7 +267,7 @@ public class Tela {
         );
         Local.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e){
-                    Evento.setLocal(JOptionPane.showInputDialog(TelaExibida,
+                    Eventos.setLocal(JOptionPane.showInputDialog(TelaExibida,
                     "Digite qual vai ser a Local do evento"));
                 }
             }
@@ -278,7 +278,7 @@ public class Tela {
                 int a = 0;
                 while(a == 0) {
                     try {
-                        Evento.setPreIn(Float.parseFloat(JOptionPane.showInputDialog(TelaExibida,
+                        Eventos.setPreIn(Float.parseFloat(JOptionPane.showInputDialog(TelaExibida,
                                 "Defina o preço para os ingressos")));
                         a = 1;
                     } catch (NumberFormatException b) {
@@ -292,7 +292,8 @@ public class Tela {
         Salv.addActionListener(new ActionListener() {
            @Override
            public void actionPerformed(ActionEvent e) {
-               SalvandoEventos Salvar = new SalvandoEventos(Evento);
+               SalvandoEventos Salvar = new SalvandoEventos(Eventos);
+               System.out.println(Eventos.getNome());
            }
        }
 

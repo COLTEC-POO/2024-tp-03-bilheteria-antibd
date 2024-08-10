@@ -1,4 +1,6 @@
-public class Filme extends Evento{
+import java.io.Serializable;
+
+public class Filme extends Evento implements Serializable {
     public Filme() {
         //define a quantidade de ingrssos disponiveis para venda
         QuanIn = 200;

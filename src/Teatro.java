@@ -1,4 +1,6 @@
-public class Teatro extends Evento{
+import java.io.Serializable;
+
+public class Teatro extends Evento implements Serializable {
     public Teatro() {
         //define a quantidade de ingrssos disponiveis para venda
         QuanIn = 250;

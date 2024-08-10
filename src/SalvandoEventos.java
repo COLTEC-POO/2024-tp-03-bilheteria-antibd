@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 
 public class SalvandoEventos {
-    SalvandoEventos(Evento Eve){salvarEvantos(Eve);}
+    SalvandoEventos(Evento Eves){salvarEvantos(Eves);}
 
     public boolean salvarEvantos(Evento Eve){
         try {

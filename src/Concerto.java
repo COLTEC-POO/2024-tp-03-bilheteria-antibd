@@ -1,4 +1,6 @@
-public class Concerto extends Evento {
+import java.io.Serializable;
+
+public class Concerto extends Evento implements Serializable {
     public Concerto() {
         //define a quantidade de ingrssos disponiveis para venda
         QuanIn = 150;
