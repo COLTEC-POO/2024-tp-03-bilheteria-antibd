@@ -47,7 +47,7 @@ public class Deserializador {
     public Evento[] Deserializa(String Tipo){
         String[] EventosCriados;
         EventosCriados = ListarArquivos();
-        Evento[] Criados = new Evento[0];
+        Evento[] Criados = new Evento[5];
         Tipo.replace("/n","/0");
         int i=0;
         for(String arquivo : EventosCriados ){
@@ -60,16 +60,20 @@ public class Deserializador {
                     try (FileInputStream fileIn = new FileInputStream(arquivo);
                          ObjectInputStream in = new ObjectInputStream(fileIn)) {
                          atual = (Evento) in.readObject();
+                        System.out.println("teste5");
                     } catch (Exception e) {
                         e.printStackTrace();
+                        System.out.println("teste4");
                     }
                     Evento[] novoArray = Arrays.copyOf(Criados,(i + 1));
                     Criados = novoArray;
                     Criados[i] = atual;
                     i++;
-
+                    System.out.println("teste3");
                 }
+                System.out.println("teste2");
             }
+            System.out.println("teste1");
         }
         return Criados;
 
