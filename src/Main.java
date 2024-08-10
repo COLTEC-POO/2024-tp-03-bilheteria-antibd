@@ -7,10 +7,11 @@ public class Main {
         for(String Sos : Socorro){
             System.out.println(Sos);
         }
-        Evento[] ola;
+        Evento[] ola ;
+        //System.out.println(oi.Deserializa("Filme"));
         ola = oi.Deserializa("Filme");
-        String nome = ola[0].getNome();
-        System.out.println(nome);
+        //String nome = ola[1].getNome();
+        System.out.println(ola[1].getNome());
 
     }
 }
