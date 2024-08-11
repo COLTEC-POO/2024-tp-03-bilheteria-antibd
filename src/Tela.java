@@ -121,16 +121,18 @@ public class Tela {
             Filme.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    Evento[] Dest;
+                    //Evento[] Dest;
 
-                    JButton[] Filmes = new JButton[0];
-                    Deserializador Des = new Deserializador();
-                    Dest = Des.Deserializa("Filme");
+                    JButton[] Filmes = new JButton[2];
+                    //Deserializador Des = new Deserializador();
+                    //Dest = Des.Deserializa("Filme");
 
-                    for(int i = 0; i < Dest.length; i++){
+                    /*for(int i = 0; i < Dest.length; i++){
                         Filmes[i] = new JButton(Dest[i].getNome());
                         Filmes = Arrays.copyOf( Filmes,(i + 1) );
-                    }
+                    }*/
+                    Filmes[0] = new JButton("Deadpool & Wolverine");
+                    Filmes[1] = new JButton("Coringa 2");
 
                     PaneParaSelEve(Filmes);
                 }
@@ -171,16 +173,39 @@ public class Tela {
 
     private void PaneParaSelEve(JButton[] EventsToAdd){
         JPanel PaneParaSelEvent = new JPanel();
-        JButton Voltar = new JButton();
+        JButton Voltar = new JButton("Voltar");
         for (JButton ButAt : EventsToAdd) {
             PaneParaSelEvent.add(ButAt);
         }
+        EventsToAdd[0].addActionListener(new ActionListener() {
+             @Override
+             public void actionPerformed(ActionEvent e) {
+                 JPanel panel = new JPanel() {
+                     @Override
+                     protected void paintComponent(Graphics g) {
+                         super.paintComponent(g);
+                         // Draw the text message
+                         g.drawString("Deadpool & Wolverine \n" +
+                                 "Em cartaz De 15/08/2024 até 30/09/2024 \n" +
+                                 "Preço do ingresso : 20.00", WIDTH, HEIGHT+200);
+                     }
+                 };
+                 TelaExibida.remove(PainelAtual);
+                 PainelAtual = panel;
+                 PainelAtual.setBackground(Color.GREEN);
+                 TelaExibida.add(PainelAtual);
+                 TelaExibida.revalidate();
+                 TelaExibida.repaint();
+                 System.out.println("ooi");
+             }
+         }
 
+        );
         PaneParaSelEvent.add(Voltar);
 
         // Remova o painel atual e adicione o novo painel
         TelaExibida.remove(PainelAtual);
-        PainelAtual = PainelTipoDeEvento;
+        PainelAtual = PaneParaSelEvent;
         PainelAtual.setBackground(Color.GREEN);
         TelaExibida.add(PainelAtual);
         TelaExibida.revalidate();
@@ -190,7 +215,7 @@ public class Tela {
              @Override
              public void actionPerformed(ActionEvent e) {
                  TelaExibida.remove(PainelAtual);
-                 PainelAtual = PainelCriaEvento;
+                 PainelAtual = PainelTipoDeEvento;
                  PainelAtual.setBackground(Color.GREEN);
                  TelaExibida.add(PainelAtual);
                  TelaExibida.revalidate();
