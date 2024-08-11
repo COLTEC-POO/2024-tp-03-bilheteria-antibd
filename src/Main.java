@@ -9,7 +9,7 @@ public class Main {
         }*/
         Evento[] ola ;
         ola = oi.Deserializa("Filme");
-        String nome = ola[1].getNome();
+        String nome = ola[0].getNome();
         System.out.println(nome);
 
     }

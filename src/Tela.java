@@ -16,6 +16,9 @@ public class Tela {
     JPanel PainelCriaEvento = new JPanel();
 
     JPanel PainelTipoDeEvento = new JPanel();
+    JPanel PaneParaSelEvent = new JPanel();
+
+    JPanel panel = new JPanel();
 
     String pride = "\uD83C\uDFF3️\u200D\uD83C\uDF08";
 
@@ -172,7 +175,7 @@ public class Tela {
     }
 
     private void PaneParaSelEve(JButton[] EventsToAdd){
-        JPanel PaneParaSelEvent = new JPanel();
+        PaneParaSelEvent = new JPanel();
         JButton Voltar = new JButton("Voltar");
         for (JButton ButAt : EventsToAdd) {
             PaneParaSelEvent.add(ButAt);
@@ -180,23 +183,25 @@ public class Tela {
         EventsToAdd[0].addActionListener(new ActionListener() {
              @Override
              public void actionPerformed(ActionEvent e) {
-                 JPanel panel = new JPanel() {
+                 panel = new JPanel() {
                      @Override
                      protected void paintComponent(Graphics g) {
                          super.paintComponent(g);
                          // Draw the text message
-                         g.drawString("Deadpool & Wolverine \n" +
+                         g.drawString(EventsToAdd[0].getName() +
                                  "Em cartaz De 15/08/2024 até 30/09/2024 \n" +
-                                 "Preço do ingresso : 20.00", WIDTH, HEIGHT+200);
+                                 "Preço do ingresso : 20.00"+
+                                 "Orçamento: 300 Milhões", WIDTH, HEIGHT+200);
                      }
                  };
+                 JButton CompIn = new JButton("Comprar Ingresso");
+                 JButton CompVip = new JButton("COmprar Ingresso Vip");
                  TelaExibida.remove(PainelAtual);
                  PainelAtual = panel;
                  PainelAtual.setBackground(Color.GREEN);
                  TelaExibida.add(PainelAtual);
                  TelaExibida.revalidate();
                  TelaExibida.repaint();
-                 System.out.println("ooi");
              }
          }
 
@@ -224,7 +229,56 @@ public class Tela {
         }
 
         );
+        EventsToAdd[1].addActionListener(new ActionListener() {
+             @Override
+             public void actionPerformed(ActionEvent e) {
+                 panel = new JPanel() {
+                     @Override
+                     protected void paintComponent(Graphics g) {
+                         super.paintComponent(g);
+                         // Draw the text message
+                         g.drawString("Coringa 2\n" +
+                                 "Em cartaz De 12/09/2024 até 30/10/2024 \n" +
+                                 "Preço do ingresso : 20.60" +
+                                 "Orçamento: 200 Milhões", WIDTH, HEIGHT+200);
+                     }
+                 };
+                 TelaExibida.remove(PainelAtual);
+                 PainelAtual = panel;
+                 PainelAtual.setBackground(Color.GREEN);
+                 TelaExibida.add(PainelAtual);
+                 TelaExibida.revalidate();
+                 TelaExibida.repaint();
+                 System.out.println("ooi");
+             }
+         }
+
+        );
+        PaneParaSelEvent.add(Voltar);
+
+        // Remova o painel atual e adicione o novo painel
+        TelaExibida.remove(PainelAtual);
+        PainelAtual = PaneParaSelEvent;
+        PainelAtual.setBackground(Color.GREEN);
+        TelaExibida.add(PainelAtual);
+        TelaExibida.revalidate();
+        TelaExibida.repaint();
+
+        Voltar.addActionListener(new ActionListener() {
+                                     @Override
+                                     public void actionPerformed(ActionEvent e) {
+                                         TelaExibida.remove(PainelAtual);
+                                         PainelAtual = PainelTipoDeEvento;
+                                         PainelAtual.setBackground(Color.GREEN);
+                                         TelaExibida.add(PainelAtual);
+                                         TelaExibida.revalidate();
+                                         TelaExibida.repaint();
+                                     }
+                                 }
+
+        );
     }
+
     private void PaneComOQuest(Evento Eventos) {
         // Crie um novo painel com o questionário
         JPanel Quest = new JPanel();
