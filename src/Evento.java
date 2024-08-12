@@ -4,7 +4,16 @@ public abstract class Evento implements RelaDeRece {
     protected String hora;
     protected String local;
     protected String Tipo;
-    protected int id;
+    protected String Orcamento;
+
+    public String getOrcamento() {
+        return Orcamento;
+    }
+
+    public void setOrcamento(String orcamento) {
+        Orcamento = orcamento;
+    }
+
     //variavel que representa a quantidade de ingressos
     protected int QuanIn;
 
@@ -14,8 +23,7 @@ public abstract class Evento implements RelaDeRece {
     public String toString(){
         return this.nome + "\n" + this.data + "\n" +
                 this.hora + "\n" + this.local + "\n" +
-                this.QuanIn + "\n" + this.id + "\n" +
-                this.Tipo + "\n";
+                this.QuanIn + "\n" + this.Tipo + "\n";
     }
 
     public String getNome() {
@@ -62,14 +70,6 @@ public abstract class Evento implements RelaDeRece {
 
     public void setPreIn(double preIn) {
         PreIn = preIn;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public int getQuanIn() {

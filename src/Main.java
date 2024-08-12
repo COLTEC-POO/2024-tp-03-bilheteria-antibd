@@ -10,31 +10,221 @@ public class Main {
                 JOptionPane.INFORMATION_MESSAGE,
                 null,options,options[0]);
         if (escolhido == 0){
-            Object[] Filmes = {"Deadpool & Wolverine", "Coringa 2", "Meu malvado favorito 4"};
+            Filme[] films = new Filme[3];
+
+            for (int i = 0; i < films.length; i++){
+                films[i] = new Filme();
+            }
+
+            films[0].setNome("Deadpool & Wolverine");
+            films[0].setData("08/08/2024");
+            films[0].setHora("15:20");
+            films[0].setPreIn(20.30);
+            films[0].setLocal("Cinemark DelRey");
+            films[0].setOrcamento("300M");
+
+            films[1].setNome("Coringa 2");
+            films[1].setData("06/09/2024");
+            films[1].setHora("12:20");
+            films[1].setPreIn(25.30);
+            films[1].setLocal("Cinemark DelRey");
+            films[1].setOrcamento("200M");
+
+            films[2].setNome("Meu Malvado Favorito 4");
+            films[2].setData("26/07/2024");
+            films[2].setHora("18:20");
+            films[2].setPreIn(18.30);
+            films[2].setLocal("Cinemark DelRey");
+            films[2].setOrcamento("250M");
+
+            Object[] Filmes = {films[0].getNome(),  films[1].getNome(),  films[2].getNome()};
             int FilmeEsc = JOptionPane.showOptionDialog(null,
                     "Qual filme você quer ver",
                     "Bilheteria Cinemark",
                     JOptionPane.DEFAULT_OPTION,
                     JOptionPane.INFORMATION_MESSAGE,
                     null,Filmes,Filmes[0]);
+            if(FilmeEsc == 0){
+                Object[] Ingressos = {"Ingresso Meia", "Ingresso Comun","Ingresso Vip"};
+                JOptionPane.showOptionDialog(null,
+                        films[0].getNome() + "\n" +
+                                "Lançamento:" + films[0].getData() + "\n" +
+                                "Hora:" + films[0].getHora() + "\n" +
+                                "Preço do ingresso: R$"+ films[0].getPreIn() +"\n" +
+                                "Orçamento: $" + films[0].getOrcamento() +"\n",
+                        "Informações do filme",
+                        JOptionPane.DEFAULT_OPTION,
+                        JOptionPane.INFORMATION_MESSAGE,
+                        null,Ingressos,Ingressos[0]
+                );
+            }
+            if(FilmeEsc == 1){
+                Object[] Ingressos = {"Ingresso Meia", "Ingresso Comun","Ingresso Vip"};
+                JOptionPane.showOptionDialog(null,
+                        films[1].getNome() + "\n" +
+                                "Lançamento:" + films[1].getData() + "\n" +
+                                "Hora:" + films[1].getHora() + "\n" +
+                                "Preço do ingresso: R$"+ films[1].getPreIn() +"\n" +
+                                "Orçamento: $" + films[1].getOrcamento() +"\n",
+                        "Informações do filme",
+                        JOptionPane.DEFAULT_OPTION,
+                        JOptionPane.INFORMATION_MESSAGE,
+                        null,Ingressos,Ingressos[0]
+                );
+            }
+            if(FilmeEsc == 2){
+                Object[] Ingressos = {"Ingresso Meia", "Ingresso Comun","Ingresso Vip"};
+                JOptionPane.showOptionDialog(null,
+                        films[2].getNome() + "\n" +
+                                "Lançamento:" + films[2].getData() + "\n" +
+                                "Hora:" + films[2].getHora() + "\n" +
+                                "Preço do ingresso: R$"+ films[2].getPreIn() +"\n" +
+                                "Orçamento: $" + films[2].getOrcamento() +"\n",
+                        "Informações do filme",
+                        JOptionPane.DEFAULT_OPTION,
+                        JOptionPane.INFORMATION_MESSAGE,
+                        null,Ingressos,Ingressos[0]
+                );
+            }
         }
+
+
         if (escolhido == 1){
-            Object[] Concertos = {"Sakira", "Kenny West", "Taylor Swift"};
-            int ConcEsc = JOptionPane.showOptionDialog(null,
-                    "Você quer ir ao show de qual destes artistas ",
-                    "Bilheteria Cinemark",
+            Teatro[] Concert = new Teatro[3];
+
+            for (int i = 0; i < Concert.length; i++){
+                Concert[i] = new Teatro();
+            }
+
+            Concert[0].setNome("Sakira");
+            Concert[0].setData("17/06/2025");
+            Concert[0].setHora("15:20");
+            Concert[0].setPreIn(200.30);
+            Concert[0].setLocal("Mineirão");
+            Concert[0].setOrcamento("20M");
+
+            Concert[1].setNome("Kenny west");
+            Concert[1].setData("06/09/2024");
+            Concert[1].setHora("21:20");
+            Concert[1].setPreIn(250.30);
+            Concert[1].setLocal("Mineirão");
+            Concert[1].setOrcamento("15M");
+
+            Concert[2].setNome("Taylor Swift");
+            Concert[2].setData("26/07/2024");
+            Concert[2].setHora("20:20");
+            Concert[2].setPreIn(180.30);
+            Concert[2].setLocal("Mineirão");
+            Concert[2].setOrcamento("25M");
+
+            Object[] Conc = {Concert[0].getNome(),  Concert[1].getNome(),  Concert[2].getNome()};
+            int ConceEsc = JOptionPane.showOptionDialog(null,
+                    "A qual concerto você quer ir",
+                    "Bilheteria Mineirão",
                     JOptionPane.DEFAULT_OPTION,
                     JOptionPane.INFORMATION_MESSAGE,
-                    null,Concertos,Concertos[0]);
+                    null,Conc,Conc[0]);
+            if(ConceEsc == 0){
+                Object[] Ingressos = {"Ingresso Meia", "Ingresso Comun","Ingresso Vip"};
+                JOptionPane.showOptionDialog(null,
+                        Concert[0].getNome() + "\n" +
+                                "Lançamento:" + Concert[0].getData() + "\n" +
+                                "Hora:" + Concert[0].getHora() + "\n" +
+                                "Preço do ingresso: R$"+ Concert[0].getPreIn() +"\n" +
+                                "Orçamento: $" + Concert[0].getOrcamento() +"\n",
+                        "Informações do filme",
+                        JOptionPane.DEFAULT_OPTION,
+                        JOptionPane.INFORMATION_MESSAGE,
+                        null,Ingressos,Ingressos[0]
+                );
+            }
+            if(ConceEsc == 1){
+                Object[] Ingressos = {"Ingresso Meia", "Ingresso Comun","Ingresso Vip"};
+                JOptionPane.showOptionDialog(null,
+                        Concert[1].getNome() + "\n" +
+                                "Lançamento:" + Concert[1].getData() + "\n" +
+                                "Hora:" + Concert[1].getHora() + "\n" +
+                                "Preço do ingresso: R$"+ Concert[1].getPreIn() +"\n" +
+                                "Orçamento: $" + Concert[1].getOrcamento() +"\n",
+                        "Informações do filme",
+                        JOptionPane.DEFAULT_OPTION,
+                        JOptionPane.INFORMATION_MESSAGE,
+                        null,Ingressos,Ingressos[0]
+                );
+            }
+            if(ConceEsc == 2){
+                Object[] Ingressos = {"Ingresso Meia", "Ingresso Comun","Ingresso Vip"};
+                JOptionPane.showOptionDialog(null,
+                        Concert[2].getNome() + "\n" +
+                                "Lançamento:" + Concert[2].getData() + "\n" +
+                                "Hora:" + Concert[2].getHora() + "\n" +
+                                "Preço do ingresso: R$"+ Concert[2].getPreIn() +"\n" +
+                                "Orçamento: $" + Concert[2].getOrcamento() +"\n",
+                        "Informações do filme",
+                        JOptionPane.DEFAULT_OPTION,
+                        JOptionPane.INFORMATION_MESSAGE,
+                        null,Ingressos,Ingressos[0]
+                );
+            }
         }
         if (escolhido == 2){
-            Object[] Teatros = {"Cats", "Kenny West", "Taylor Swift"};
-            int TeatroEsc = JOptionPane.showOptionDialog(null,
-                    "Você quer ir ao show de qual destes artistas ",
-                    "Bilheteria Cinemark",
+            Teatro[] Teat = new Teatro[2];
+
+            for (int i = 0; i < Teat.length; i++){
+                Teat[i] = new Teatro();
+            }
+
+            Teat[0].setNome("Cats");
+            Teat[0].setData("17/03/2025");
+            Teat[0].setHora("19:20");
+            Teat[0].setPreIn(50.30);
+            Teat[0].setLocal("Broodway");
+            Teat[0].setOrcamento("10M");
+
+            Teat[1].setNome("Harry Potter e A criança amaldiçoada");
+            Teat[1].setData("25/04/2024");
+            Teat[1].setHora("17:20");
+            Teat[1].setPreIn(25.30);
+            Teat[1].setLocal("Broodway");
+            Teat[1].setOrcamento("7M");
+
+            Object[] Conc = {Teat[0].getNome(),  Teat[1].getNome()};
+            int ConceEsc = JOptionPane.showOptionDialog(null,
+                    "A qual concerto você quer ir",
+                    "Bilheteria Broodway",
                     JOptionPane.DEFAULT_OPTION,
                     JOptionPane.INFORMATION_MESSAGE,
-                    null,Teatros,Teatros[0]);
+                    null,Conc,Conc[0]);
+            if(ConceEsc == 0){
+                Object[] Ingressos = {"Ingresso Meia", "Ingresso Comun","Ingresso Vip"};
+                JOptionPane.showOptionDialog(null,
+                        Teat[0].getNome() + "\n" +
+                                "Lançamento:" + Teat[0].getData() + "\n" +
+                                "Hora:" + Teat[0].getHora() + "\n" +
+                                "Preço do ingresso: R$"+ Teat[0].getPreIn() +"\n" +
+                                "Orçamento: $" + Teat[0].getOrcamento() +"\n" +
+                                "Quantidade de Ingressos:" + Teat[0].getQuanIn(),
+                        "Informações do filme",
+                        JOptionPane.DEFAULT_OPTION,
+                        JOptionPane.INFORMATION_MESSAGE,
+                        null,Ingressos,Ingressos[0]
+                );
+            }
+            if(ConceEsc == 1){
+                Object[] Ingressos = {"Ingresso Meia", "Ingresso Comun","Ingresso Vip"};
+                JOptionPane.showOptionDialog(null,
+                        Teat[1].getNome() + "\n" +
+                                "Lançamento:" + Teat[1].getData() + "\n" +
+                                "Hora:" + Teat[1].getHora() + "\n" +
+                                "Preço do ingresso: R$"+ Teat[1].getPreIn() +"\n" +
+                                "Orçamento: $" + Teat[1].getOrcamento() +"\n" +
+                                "Quantidade de Ingressos:" + Teat[1].getQuanIn(),
+                        "Informações do filme",
+                        JOptionPane.DEFAULT_OPTION,
+                        JOptionPane.INFORMATION_MESSAGE,
+                        null,Ingressos,Ingressos[0]
+                );
+            }
         }
     }
 }
