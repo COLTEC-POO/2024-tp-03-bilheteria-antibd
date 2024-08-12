@@ -50,7 +50,7 @@ public class Concerto extends Evento implements Serializable {
 
     //Shows deverão ocupar no máximo 10% dos ingressos totais com ingressos VIP
     public boolean verificaIngresso() {
-        if (ingressosVip >= (getQuanIn() * 10 / 100)) {
+        if (ingressosVip >= ((getQuanIn() * 10) / 100)) {
             return true;
         }
         return false;

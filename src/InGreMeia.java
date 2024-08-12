@@ -6,6 +6,6 @@ public class InGreMeia extends Ingresso{
         this.preco = prec;
         setPreco(getPreco() / 2);
         tipo = "Meia";
-        System.out.println("Deu bom");
+        System.out.println("Ingresso meia comprado");
     }
 }

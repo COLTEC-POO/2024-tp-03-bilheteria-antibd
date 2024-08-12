@@ -93,6 +93,7 @@ public abstract class Evento implements RelaDeRece {
     }
 
     public int getQuanIn() {
+        QuanIn = ingressosVendidos;
         return QuanIn;
     }
 

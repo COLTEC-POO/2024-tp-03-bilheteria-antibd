@@ -6,7 +6,7 @@ public class InGreNormal extends Ingresso{
         this.preco = prec;
         setPreco(getPreco());
         tipo = "Normal";
-        System.out.println("Deu bom 2");
+        System.out.println("Ingresso normal comprado");
 
     }
 }
