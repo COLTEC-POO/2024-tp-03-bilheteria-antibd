@@ -45,8 +45,8 @@ public class Main {
                     JOptionPane.INFORMATION_MESSAGE,
                     null,Filmes,Filmes[0]);
             if(FilmeEsc == 0){
-                Object[] Ingressos = {"Ingresso Meia", "Ingresso Comun","Ingresso Vip"};
-                JOptionPane.showOptionDialog(null,
+                Object[] Ingressos = {"Ingresso Meia", "Ingresso Comun"};
+                int ing = JOptionPane.showOptionDialog(null,
                         films[0].getNome() + "\n" +
                                 "Lançamento:" + films[0].getData() + "\n" +
                                 "Hora:" + films[0].getHora() + "\n" +
@@ -57,9 +57,12 @@ public class Main {
                         JOptionPane.INFORMATION_MESSAGE,
                         null,Ingressos,Ingressos[0]
                 );
+                if(ing == 0){
+
+                }
             }
             if(FilmeEsc == 1){
-                Object[] Ingressos = {"Ingresso Meia", "Ingresso Comun","Ingresso Vip"};
+                Object[] Ingressos = {"Ingresso Meia", "Ingresso Comun"};
                 JOptionPane.showOptionDialog(null,
                         films[1].getNome() + "\n" +
                                 "Lançamento:" + films[1].getData() + "\n" +
@@ -73,7 +76,7 @@ public class Main {
                 );
             }
             if(FilmeEsc == 2){
-                Object[] Ingressos = {"Ingresso Meia", "Ingresso Comun","Ingresso Vip"};
+                Object[] Ingressos = {"Ingresso Meia", "Ingresso Comun"};
                 JOptionPane.showOptionDialog(null,
                         films[2].getNome() + "\n" +
                                 "Lançamento:" + films[2].getData() + "\n" +
