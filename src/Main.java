@@ -297,7 +297,7 @@ public class Main {
                 }
             }
             if (escolhido == 3){
-                Object[] Ingressos = {"dead pull e wolverine", "Icoringa 2", "meu malvado favorito4", "shakira", "kainewest", "Tailor swift", "cats", "Harry potter e a criança amaldiçoada"};
+                Object[] Ingressos = {"Deadpool e wolverine", "Coringa 2", "Meu malvado favorito4", "Shakira", "Kaine West", "Tailor Swift", "Cats", "Harry potter e a criança amaldiçoada"};
                 int esc = JOptionPane.showOptionDialog(null,
                         "Você quer ver",
                         "Informações do filme",
@@ -307,6 +307,8 @@ public class Main {
                 );
                 switch (esc){
                     case 0:
+
+
                         films[0].imprimirIngressos();
                         continuar = true;
                         break;

@@ -30,7 +30,8 @@ public abstract class Ingresso implements RelaDeRece{
     }
 
     @Override
-    public void extrato() {
-        System.out.println(toString());
+    public String[] extrato() {
+        String[] Gambiarra = {toString(),"\0"};
+        System.out.println(toString()); return Gambiarra;
     }
 }

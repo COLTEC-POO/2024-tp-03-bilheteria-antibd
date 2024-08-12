@@ -31,10 +31,11 @@ public class Concerto extends Evento implements Serializable {
         return total;
     }
     @Override
-    public void extrato(){
+    public String[] extrato(){
+        String[] extrtoComp = new String[0];
         for(Ingresso atual : this.IngressoCon){
             if(atual!= null)
                 atual.toString();
-        }
+        }return
     }
 }
