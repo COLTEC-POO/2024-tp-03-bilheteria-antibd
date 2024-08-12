@@ -4,6 +4,7 @@ public class Concerto extends Evento implements Serializable {
     public Concerto() {
         //define a quantidade de ingrssos disponiveis para venda
         QuanIn = 150;
+        vetorIngressos = new Ingresso[QuanIn];
         setTipo("Concerto");
     }
     private Ingresso[] IngressoCon = new Ingresso[QuanIn];

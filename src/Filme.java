@@ -4,6 +4,7 @@ public class Filme extends Evento implements Serializable {
     public Filme() {
         //define a quantidade de ingrssos disponiveis para venda
         QuanIn = 200;
+        vetorIngressos = new Ingresso[QuanIn];
         setTipo("Filme");
     }
     private Ingresso[] IngressoFilm = new Ingresso[QuanIn];
@@ -34,4 +35,6 @@ public class Filme extends Evento implements Serializable {
                 atual.toString();
         }
     }
+
+
 }

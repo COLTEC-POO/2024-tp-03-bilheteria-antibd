@@ -3,9 +3,82 @@ import javax.swing.*;
 public class Main {
     public static void main(String[] args){
         boolean continuar = true;
+        Filme[] films = new Filme[3];
+        Concerto[] Concert = new Concerto[3];
+        Teatro[] Teat = new Teatro[2];
+
+        for (int i = 0; i < films.length; i++) {
+            films[i] = new Filme();
+        }
+
+        films[0].setNome("Deadpool & Wolverine");
+        films[0].setData("08/08/2024");
+        films[0].setHora("15:20");
+        films[0].setPreIn(20.30);
+        films[0].setLocal("Cinemark DelRey");
+        films[0].setOrcamento("300M");
+
+        films[1].setNome("Coringa 2");
+        films[1].setData("06/09/2024");
+        films[1].setHora("12:20");
+        films[1].setPreIn(25.30);
+        films[1].setLocal("Cinemark DelRey");
+        films[1].setOrcamento("200M");
+
+        films[2].setNome("Meu Malvado Favorito 4");
+        films[2].setData("26/07/2024");
+        films[2].setHora("18:20");
+        films[2].setPreIn(18.30);
+        films[2].setLocal("Cinemark DelRey");
+        films[2].setOrcamento("250M");
+
+        for (int i = 0; i < Concert.length; i++) {
+            Concert[i] = new Concerto();
+        }
+
+        Concert[0].setNome("Sakira");
+        Concert[0].setData("17/06/2025");
+        Concert[0].setHora("15:20");
+        Concert[0].setPreIn(200.30);
+        Concert[0].setLocal("Mineirão");
+        Concert[0].setOrcamento("20M");
+
+        Concert[1].setNome("Kenny west");
+        Concert[1].setData("06/09/2024");
+        Concert[1].setHora("21:20");
+        Concert[1].setPreIn(250.30);
+        Concert[1].setLocal("Mineirão");
+        Concert[1].setOrcamento("15M");
+
+        Concert[2].setNome("Taylor Swift");
+        Concert[2].setData("26/07/2024");
+        Concert[2].setHora("20:20");
+        Concert[2].setPreIn(180.30);
+        Concert[2].setLocal("Mineirão");
+        Concert[2].setOrcamento("25M");
+
+        for (int i = 0; i < Teat.length; i++) {
+            Teat[i] = new Teatro();
+        }
+
+        Teat[0].setNome("Cats");
+        Teat[0].setData("17/03/2025");
+        Teat[0].setHora("19:20");
+        Teat[0].setPreIn(50.30);
+        Teat[0].setLocal("Broodway");
+        Teat[0].setOrcamento("10M");
+
+        Teat[1].setNome("Harry Potter e A criança amaldiçoada");
+        Teat[1].setData("25/04/2024");
+        Teat[1].setHora("17:20");
+        Teat[1].setPreIn(25.30);
+        Teat[1].setLocal("Broodway");
+        Teat[1].setOrcamento("7M");
+
+
         while(continuar) {
             continuar = false;
-            Object[] options = {"Filme", "Concerto", "Teatro","Voltar"};
+            Object[] options = {"Filme", "Concerto", "Teatro", "Listar ingressos"};
             int escolhido = JOptionPane.showOptionDialog(null,
                     "Qual tipo de evento você vai Comprar o ingreso ",
                     "Bilheteria Cinemark",
@@ -13,32 +86,9 @@ public class Main {
                     JOptionPane.INFORMATION_MESSAGE,
                     null, options, options[0]);
             if (escolhido == 0) {
-                Filme[] films = new Filme[3];
 
-                for (int i = 0; i < films.length; i++) {
-                    films[i] = new Filme();
-                }
 
-                films[0].setNome("Deadpool & Wolverine");
-                films[0].setData("08/08/2024");
-                films[0].setHora("15:20");
-                films[0].setPreIn(20.30);
-                films[0].setLocal("Cinemark DelRey");
-                films[0].setOrcamento("300M");
 
-                films[1].setNome("Coringa 2");
-                films[1].setData("06/09/2024");
-                films[1].setHora("12:20");
-                films[1].setPreIn(25.30);
-                films[1].setLocal("Cinemark DelRey");
-                films[1].setOrcamento("200M");
-
-                films[2].setNome("Meu Malvado Favorito 4");
-                films[2].setData("26/07/2024");
-                films[2].setHora("18:20");
-                films[2].setPreIn(18.30);
-                films[2].setLocal("Cinemark DelRey");
-                films[2].setOrcamento("250M");
 
                 Object[] Filmes = {films[0].getNome(), films[1].getNome(), films[2].getNome(),"Voltar"};
                 int FilmeEsc = JOptionPane.showOptionDialog(null,
@@ -47,6 +97,7 @@ public class Main {
                         JOptionPane.DEFAULT_OPTION,
                         JOptionPane.INFORMATION_MESSAGE,
                         null, Filmes, Filmes[0]);
+                //filme 1
                 if (FilmeEsc == 0) {
                     Object[] Ingressos = {"Ingresso Meia", "Ingresso Comun","Voltar"};
                     int ing = JOptionPane.showOptionDialog(null,
@@ -62,17 +113,24 @@ public class Main {
                             null, Ingressos, Ingressos[0]
                     );
                     if (ing == 0) {
-                        InGreMeia ticketMF1 = new InGreMeia((float) films[0].getPreIn());
+                        films[0].vetorIngressos[films[0].ingressosVendidos] = new InGreMeia((float) films[0].getPreIn());
+                        films[0].ingressosVendidos++;
+                        System.out.println(films[0].ingressosVendidos);
+                        continuar = true;
                     }
                     if(ing == 1){
-                        InGreNormal ticketNF1 = new InGreNormal((float) films[0].getPreIn());
+                        films[0].vetorIngressos[films[0].ingressosVendidos] = new InGreNormal((float) films[0].getPreIn());
+                        films[0].ingressosVendidos++;
+                        System.out.println(films[0].ingressosVendidos);
+                        continuar = true;
                     }
                     if(ing == 2){
                         continuar = true;
                     }
                 }
+                //filme 2
                 if (FilmeEsc == 1) {
-                    Object[] Ingressos = {"Ingresso Meia", "Ingresso Comun"};
+                    Object[] Ingressos = {"Ingresso Meia", "Ingresso Comun","Voltar"};
                     int ing = JOptionPane.showOptionDialog(null,
                             films[1].getNome() + "\n" +
                                     "Lançamento:" + films[1].getData() + "\n" +
@@ -86,15 +144,25 @@ public class Main {
                             null, Ingressos, Ingressos[0]
                     );
                     if (ing == 0) {
-                        InGreMeia ticketMF1 = new InGreMeia((float) films[0].getPreIn());
+                        films[1].vetorIngressos[films[1].ingressosVendidos] = new InGreMeia((float) films[1].getPreIn());
+                        films[1].ingressosVendidos++;
+                        System.out.println(films[1].ingressosVendidos);
+                        continuar = true;
                     }
                     if(ing == 1){
-                        InGreNormal ticketNF1 = new InGreNormal((float) films[0].getPreIn());
+                        films[1].vetorIngressos[films[1].ingressosVendidos] = new InGreNormal((float) films[1].getPreIn());
+                        films[1].ingressosVendidos++;
+                        System.out.println(films[1].ingressosVendidos);
+                        continuar = true;
+                    }
+                    if(ing == 2){
+                        continuar = true;
                     }
                 }
+                //Filme 3
                 if (FilmeEsc == 2) {
                     Object[] Ingressos = {"Ingresso Meia", "Ingresso Comun"};
-                    JOptionPane.showOptionDialog(null,
+                    int ing = JOptionPane.showOptionDialog(null,
                             films[2].getNome() + "\n" +
                                     "Lançamento:" + films[2].getData() + "\n" +
                                     "Hora:" + films[2].getHora() + "\n" +
@@ -106,40 +174,25 @@ public class Main {
                             JOptionPane.INFORMATION_MESSAGE,
                             null, Ingressos, Ingressos[0]
                     );
+                    if (ing == 0) {
+                        films[2].vetorIngressos[films[2].ingressosVendidos] = new InGreMeia((float) films[2].getPreIn());
+                        films[2].ingressosVendidos++;
+                        continuar = true;
+                    }
+                    if(ing == 1){
+                        films[2].vetorIngressos[films[2].ingressosVendidos] = new InGreNormal((float) films[2].getPreIn());
+                        films[2].ingressosVendidos++;
+                        continuar = true;
+                    }
                 }
                 if(FilmeEsc == 3){
                     continuar = true;
                 }
             }
 
-
+            //concertos
             if (escolhido == 1) {
-                Concerto[] Concert = new Concerto[3];
 
-                for (int i = 0; i < Concert.length; i++) {
-                    Concert[i] = new Concerto();
-                }
-
-                Concert[0].setNome("Sakira");
-                Concert[0].setData("17/06/2025");
-                Concert[0].setHora("15:20");
-                Concert[0].setPreIn(200.30);
-                Concert[0].setLocal("Mineirão");
-                Concert[0].setOrcamento("20M");
-
-                Concert[1].setNome("Kenny west");
-                Concert[1].setData("06/09/2024");
-                Concert[1].setHora("21:20");
-                Concert[1].setPreIn(250.30);
-                Concert[1].setLocal("Mineirão");
-                Concert[1].setOrcamento("15M");
-
-                Concert[2].setNome("Taylor Swift");
-                Concert[2].setData("26/07/2024");
-                Concert[2].setHora("20:20");
-                Concert[2].setPreIn(180.30);
-                Concert[2].setLocal("Mineirão");
-                Concert[2].setOrcamento("25M");
 
                 Object[] Conc = {Concert[0].getNome(), Concert[1].getNome(), Concert[2].getNome(),"Voltar"};
                 int ConceEsc = JOptionPane.showOptionDialog(null,
@@ -198,25 +251,9 @@ public class Main {
                 }
             }
             if (escolhido == 2) {
-                Teatro[] Teat = new Teatro[2];
 
-                for (int i = 0; i < Teat.length; i++) {
-                    Teat[i] = new Teatro();
-                }
 
-                Teat[0].setNome("Cats");
-                Teat[0].setData("17/03/2025");
-                Teat[0].setHora("19:20");
-                Teat[0].setPreIn(50.30);
-                Teat[0].setLocal("Broodway");
-                Teat[0].setOrcamento("10M");
 
-                Teat[1].setNome("Harry Potter e A criança amaldiçoada");
-                Teat[1].setData("25/04/2024");
-                Teat[1].setHora("17:20");
-                Teat[1].setPreIn(25.30);
-                Teat[1].setLocal("Broodway");
-                Teat[1].setOrcamento("7M");
 
                 Object[] teatre = {Teat[0].getNome(), Teat[1].getNome(),"Voltar"};
                 int TeatEsc = JOptionPane.showOptionDialog(null,
@@ -257,6 +294,50 @@ public class Main {
                 }
                 if(TeatEsc == 2){
                     continuar = true;
+                }
+            }
+            if (escolhido == 3){
+                Object[] Ingressos = {"dead pull e wolverine", "Icoringa 2", "meu malvado favorito4", "shakira", "kainewest", "Tailor swift", "cats", "Harry potter e a criança amaldiçoada"};
+                int esc = JOptionPane.showOptionDialog(null,
+                        "Você quer ver",
+                        "Informações do filme",
+                        JOptionPane.DEFAULT_OPTION,
+                        JOptionPane.INFORMATION_MESSAGE,
+                        null, Ingressos, Ingressos[0]
+                );
+                switch (esc){
+                    case 0:
+                        films[0].imprimirIngressos();
+                        continuar = true;
+                        break;
+                    case 1:
+                        films[1].imprimirIngressos();
+                        continuar = true;
+                        break;
+                    case 2:
+                        films[2].imprimirIngressos();
+                        continuar = true;
+                        break;
+                    case 3:
+                        Concert[0].imprimirIngressos();
+                        continuar = true;
+                        break;
+                    case 4:
+                        Concert[1].imprimirIngressos();
+                        continuar = true;
+                        break;
+                    case 5:
+                        Concert[2].imprimirIngressos();
+                        continuar = true;
+                        break;
+                    case 6:
+                        Teat[0].imprimirIngressos();
+                        continuar = true;
+                        break;
+                    case 7:
+                        Teat[1].imprimirIngressos();
+                        continuar = true;
+                        break;
                 }
             }
 

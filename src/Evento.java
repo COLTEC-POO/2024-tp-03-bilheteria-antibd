@@ -5,6 +5,8 @@ public abstract class Evento implements RelaDeRece {
     protected String local;
     protected String Tipo;
     protected String Orcamento;
+    protected Ingresso[] vetorIngressos;
+    protected int ingressosVendidos = 0;
 
     public String getOrcamento() {
         return Orcamento;
@@ -24,6 +26,13 @@ public abstract class Evento implements RelaDeRece {
         return this.nome + "\n" + this.data + "\n" +
                 this.hora + "\n" + this.local + "\n" +
                 this.QuanIn + "\n" + this.Tipo + "\n";
+    }
+    public void imprimirIngressos(){
+        for (Ingresso ingresso : vetorIngressos){
+            if (ingresso != null){
+                ingresso.extrato();
+            }
+        }
     }
 
     public String getNome() {

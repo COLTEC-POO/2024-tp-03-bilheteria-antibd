@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public class Ingresso implements RelaDeRece{
+public abstract class Ingresso implements RelaDeRece{
 
     protected Date dataVenda;
     //preço do ingresso normal
@@ -31,6 +31,6 @@ public class Ingresso implements RelaDeRece{
 
     @Override
     public void extrato() {
-        toString();
+        System.out.println(toString());
     }
 }
