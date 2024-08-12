@@ -49,7 +49,7 @@ public class Teatro extends Evento implements Serializable {
     }
 
     public boolean verificaIngresso() {
-        if (ingressosMeia >= (getQuanIn() * 1 / 100)) {
+        if (ingressosMeia >= (getQuanIn() * 20 / 100)) {
             return false;
         }
         return true;

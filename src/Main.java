@@ -237,8 +237,11 @@ public class Main {
                             Concert[0].vetorIngressos[Concert[0].ingressosVendidos] = new InGreVip();
                             Concert[0].ingressosVendidos++;
                             Concert[0].ingressosVip++;
+                            continuar = true;
+                        }else {
+                            JOptionPane.showMessageDialog(null,"todos os ingressos vip foram vendidos");
+                            continuar = true;
                         }
-                        continuar = true;
                     }
                     if(ing == 3){
                         continuar = true;
@@ -276,8 +279,12 @@ public class Main {
                         Concert[1].vetorIngressos[Concert[1].ingressosVendidos] = new InGreVip();
                         Concert[1].ingressosVendidos++;
                         Concert[1].ingressosVip++;
-                    }
                         continuar = true;
+                    }else {
+                        JOptionPane.showMessageDialog(null,"todos os ingressos vip foram vendidos");
+                        continuar = true;
+                    }
+
                     }
                     if(ing == 3){
                         continuar = true;
@@ -314,8 +321,11 @@ public class Main {
                             Concert[2].vetorIngressos[Concert[2].ingressosVendidos] = new InGreVip();
                             Concert[2].ingressosVendidos++;
                             Concert[2].ingressosVip++;
+                            continuar = true;
+                        }else {
+                            JOptionPane.showMessageDialog(null,"todos os ingressos vip foram vendidos");
+                            continuar = true;
                         }
-                        continuar = true;
                     }
                     if(ing == 3){
                         continuar = true;
@@ -353,8 +363,12 @@ public class Main {
                             Teat[0].vetorIngressos[Teat[0].ingressosVendidos] = new InGreMeia((float) Teat[0].getPreIn());
                             Teat[0].ingressosVendidos++;
                             Teat[0].ingressosMeia++;
+                            continuar = true;
+                        }else {
+                            JOptionPane.showMessageDialog(null,"todos os ingressos meia foram vendidos");
+                            continuar = true;
                         }
-                        continuar = true;
+
                     }
                     if(ing == 1){
                         Teat[0].vetorIngressos[Teat[0].ingressosVendidos] = new InGreNormal((float) Teat[0].getPreIn());
@@ -391,8 +405,13 @@ public class Main {
                             Teat[1].vetorIngressos[Teat[1].ingressosVendidos] = new InGreMeia((float) Teat[1].getPreIn());
                             Teat[1].ingressosVendidos++;
                             Teat[1].ingressosMeia++;
+                            continuar = true;
+                        }else {
+                            JOptionPane.showMessageDialog(null,"todos os ingressos meia foram vendidos");
+                            continuar = true;
                         }
-                        continuar = true;
+
+
                     }
                     if(ing == 1){
                         Teat[1].vetorIngressos[Teat[1].ingressosVendidos] = new InGreNormal((float) Teat[1].getPreIn());
