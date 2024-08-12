@@ -1,4 +1,5 @@
 import java.io.Serializable;
+import java.util.Arrays;
 
 public class Teatro extends Evento implements Serializable {
     public Teatro() {
@@ -31,10 +32,15 @@ public class Teatro extends Evento implements Serializable {
         return total;
     }
     @Override
-    public void extrato(){
+    public String[] extrato(){
+        String[] extratoComp = new String[3];
+        int i = 0;
         for(Ingresso atual : this.IngressoTea){
+            i++;
             if(atual!= null)
-                atual.toString();
-        }
+                extratoComp[i] = atual.toString();
+            extratoComp = Arrays.copyOf(extratoComp,(i + 1));
+
+        }return extratoComp;
     }
 }

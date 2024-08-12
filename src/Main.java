@@ -202,8 +202,8 @@ public class Main {
                         JOptionPane.INFORMATION_MESSAGE,
                         null, Conc, Conc[0]);
                 if (ConceEsc == 0) {
-                    Object[] Ingressos = {"Ingresso Meia", "Ingresso Comun", "Ingresso Vip"};
-                    JOptionPane.showOptionDialog(null,
+                    Object[] Ingressos = {"Ingresso Meia", "Ingresso Comun", "Ingresso Vip","Voltar"};
+                    int ing = JOptionPane.showOptionDialog(null,
                             Concert[0].getNome() + "\n" +
                                     "Lançamento:" + Concert[0].getData() + "\n" +
                                     "Hora:" + Concert[0].getHora() + "\n" +
@@ -215,10 +215,28 @@ public class Main {
                             JOptionPane.INFORMATION_MESSAGE,
                             null, Ingressos, Ingressos[0]
                     );
+                    if (ing == 0) {
+                        Concert[0].vetorIngressos[Concert[0].ingressosVendidos] = new InGreMeia((float) Concert[0].getPreIn());
+                        Concert[0].ingressosVendidos++;
+                        continuar = true;
+                    }
+                    if(ing == 1){
+                        Concert[0].vetorIngressos[Concert[0].ingressosVendidos] = new InGreNormal((float) Concert[0].getPreIn());
+                        Concert[0].ingressosVendidos++;
+                        continuar = true;
+                    }
+                    if(ing == 2){
+                        Concert[0].vetorIngressos[Concert[0].ingressosVendidos] = new InGreNormal((float) Concert[0].getPreIn());
+                        Concert[0].ingressosVendidos++;
+                        continuar = true;
+                    }
+                    if(ing == 3){
+                        continuar = true;
+                    }
                 }
                 if (ConceEsc == 1) {
-                    Object[] Ingressos = {"Ingresso Meia", "Ingresso Comun", "Ingresso Vip"};
-                    JOptionPane.showOptionDialog(null,
+                    Object[] Ingressos = {"Ingresso Meia", "Ingresso Comun", "Ingresso Vip","Voltar"};
+                    int ing = JOptionPane.showOptionDialog(null,
                             Concert[1].getNome() + "\n" +
                                     "Lançamento:" + Concert[1].getData() + "\n" +
                                     "Hora:" + Concert[1].getHora() + "\n" +
@@ -230,10 +248,28 @@ public class Main {
                             JOptionPane.INFORMATION_MESSAGE,
                             null, Ingressos, Ingressos[0]
                     );
+                    if (ing == 0) {
+                        Concert[1].vetorIngressos[Concert[1].ingressosVendidos] = new InGreMeia((float) Concert[1].getPreIn());
+                        Concert[1].ingressosVendidos++;
+                        continuar = true;
+                    }
+                    if(ing == 1){
+                        Concert[1].vetorIngressos[Concert[1].ingressosVendidos] = new InGreNormal((float) Concert[1].getPreIn());
+                        Concert[1].ingressosVendidos++;
+                        continuar = true;
+                    }
+                    if(ing == 2){
+                        Concert[1].vetorIngressos[Concert[1].ingressosVendidos] = new InGreNormal((float) Concert[1].getPreIn());
+                        Concert[1].ingressosVendidos++;
+                        continuar = true;
+                    }
+                    if(ing == 3){
+                        continuar = true;
+                    }
                 }
                 if (ConceEsc == 2) {
-                    Object[] Ingressos = {"Ingresso Meia", "Ingresso Comun", "Ingresso Vip"};
-                    JOptionPane.showOptionDialog(null,
+                    Object[] Ingressos = {"Ingresso Meia", "Ingresso Comun", "Ingresso Vip","Voltar"};
+                    int ing = JOptionPane.showOptionDialog(null,
                             Concert[2].getNome() + "\n" +
                                     "Lançamento:" + Concert[2].getData() + "\n" +
                                     "Hora:" + Concert[2].getHora() + "\n" +
@@ -245,15 +281,30 @@ public class Main {
                             JOptionPane.INFORMATION_MESSAGE,
                             null, Ingressos, Ingressos[0]
                     );
+                    if (ing == 0) {
+                        Concert[2].vetorIngressos[Concert[2].ingressosVendidos] = new InGreMeia((float) Concert[2].getPreIn());
+                        Concert[2].ingressosVendidos++;
+                        continuar = true;
+                    }
+                    if(ing == 1){
+                        Concert[2].vetorIngressos[Concert[2].ingressosVendidos] = new InGreNormal((float) Concert[2].getPreIn());
+                        Concert[2].ingressosVendidos++;
+                        continuar = true;
+                    }
+                    if(ing == 2){
+                        Concert[2].vetorIngressos[Concert[2].ingressosVendidos] = new InGreNormal((float) Concert[2].getPreIn());
+                        Concert[2].ingressosVendidos++;
+                        continuar = true;
+                    }
+                    if(ing == 3){
+                        continuar = true;
+                    }
                 }
                 if(ConceEsc == 3){
                     continuar = true;
                 }
             }
             if (escolhido == 2) {
-
-
-
 
                 Object[] teatre = {Teat[0].getNome(), Teat[1].getNome(),"Voltar"};
                 int TeatEsc = JOptionPane.showOptionDialog(null,
@@ -263,8 +314,8 @@ public class Main {
                         JOptionPane.INFORMATION_MESSAGE,
                         null, teatre, teatre[0]);
                 if (TeatEsc == 0) {
-                    Object[] Ingressos = {"Ingresso Meia", "Ingresso Comun", "Ingresso Vip"};
-                    JOptionPane.showOptionDialog(null,
+                    Object[] Ingressos = {"Ingresso Meia", "Ingresso Comun", "Ingresso Vip","Voltar"};
+                    int ing = JOptionPane.showOptionDialog(null,
                             Teat[0].getNome() + "\n" +
                                     "Lançamento:" + Teat[0].getData() + "\n" +
                                     "Hora:" + Teat[0].getHora() + "\n" +
@@ -276,10 +327,28 @@ public class Main {
                             JOptionPane.INFORMATION_MESSAGE,
                             null, Ingressos, Ingressos[0]
                     );
+                    if (ing == 0) {
+                        Teat[0].vetorIngressos[Teat[0].ingressosVendidos] = new InGreMeia((float) Teat[0].getPreIn());
+                        Teat[0].ingressosVendidos++;
+                        continuar = true;
+                    }
+                    if(ing == 1){
+                        Teat[0].vetorIngressos[Teat[0].ingressosVendidos] = new InGreNormal((float) Teat[0].getPreIn());
+                        Teat[0].ingressosVendidos++;
+                        continuar = true;
+                    }
+                    if(ing == 2){
+                        Teat[0].vetorIngressos[Teat[0].ingressosVendidos] = new InGreNormal((float) Teat[0].getPreIn());
+                        Teat[0].ingressosVendidos++;
+                        continuar = true;
+                    }
+                    if(ing == 3){
+                        continuar = true;
+                    }
                 }
                 if (TeatEsc == 1) {
                     Object[] Ingressos = {"Ingresso Meia", "Ingresso Comun", "Ingresso Vip","Voltar"};
-                    JOptionPane.showOptionDialog(null,
+                    int ing = JOptionPane.showOptionDialog(null,
                             Teat[1].getNome() + "\n" +
                                     "Lançamento:" + Teat[1].getData() + "\n" +
                                     "Hora:" + Teat[1].getHora() + "\n" +
@@ -291,6 +360,24 @@ public class Main {
                             JOptionPane.INFORMATION_MESSAGE,
                             null, Ingressos, Ingressos[0]
                     );
+                    if (ing == 0) {
+                        Teat[1].vetorIngressos[Teat[1].ingressosVendidos] = new InGreMeia((float) Teat[1].getPreIn());
+                        Teat[1].ingressosVendidos++;
+                        continuar = true;
+                    }
+                    if(ing == 1){
+                        Teat[1].vetorIngressos[Teat[1].ingressosVendidos] = new InGreNormal((float) Teat[1].getPreIn());
+                        Teat[1].ingressosVendidos++;
+                        continuar = true;
+                    }
+                    if(ing == 2){
+                        Teat[1].vetorIngressos[Teat[1].ingressosVendidos] = new InGreNormal((float) Teat[1].getPreIn());
+                        Teat[1].ingressosVendidos++;
+                        continuar = true;
+                    }
+                    if(ing == 3){
+                        continuar = true;
+                    }
                 }
                 if(TeatEsc == 2){
                     continuar = true;
@@ -307,8 +394,6 @@ public class Main {
                 );
                 switch (esc){
                     case 0:
-
-
                         films[0].imprimirIngressos();
                         continuar = true;
                         break;

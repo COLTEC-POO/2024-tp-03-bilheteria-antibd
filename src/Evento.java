@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 public abstract class Evento implements RelaDeRece {
     protected String nome;
     protected String data = " ";
@@ -30,7 +32,12 @@ public abstract class Evento implements RelaDeRece {
     public void imprimirIngressos(){
         for (Ingresso ingresso : vetorIngressos){
             if (ingresso != null){
-                ingresso.extrato();
+                String[] ok = ingresso.extrato();
+                String mes = "";
+                for (int f = 0; f< ok.length;f++) {
+                    mes = mes + ok[f] + "\n";
+                }
+                JOptionPane.showMessageDialog(null,mes);
             }
         }
     }
