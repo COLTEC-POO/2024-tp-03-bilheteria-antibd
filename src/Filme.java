@@ -41,5 +41,8 @@ public class Filme extends Evento implements Serializable {
 
         }return extratoComp;
     }
+    public boolean verificaIngresso(){
+        return true;
+    }
 
 }

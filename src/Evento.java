@@ -9,6 +9,9 @@ public abstract class Evento implements RelaDeRece {
     protected String Orcamento;
     protected Ingresso[] vetorIngressos;
     protected int ingressosVendidos = 0;
+    protected int ingressosPadrao = 0;
+    protected int ingressosMeia = 0;
+    protected int ingressosVip = 0;
 
     public String getOrcamento() {
         return Orcamento;
@@ -41,6 +44,7 @@ public abstract class Evento implements RelaDeRece {
             }
         }
     }
+    public abstract boolean verificaIngresso();
 
     public String getNome() {
         return nome;

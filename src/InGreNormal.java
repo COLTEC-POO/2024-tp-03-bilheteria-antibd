@@ -7,5 +7,6 @@ public class InGreNormal extends Ingresso{
         setPreco(getPreco());
         tipo = "Normal";
         System.out.println("Deu bom 2");
+
     }
 }

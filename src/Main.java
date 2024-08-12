@@ -113,14 +113,15 @@ public class Main {
                             null, Ingressos, Ingressos[0]
                     );
                     if (ing == 0) {
-                        films[0].vetorIngressos[films[0].ingressosVendidos] = new InGreMeia((float) films[0].getPreIn());
-                        films[0].ingressosVendidos++;
-                        System.out.println(films[0].ingressosVendidos);
+                            films[0].vetorIngressos[films[0].ingressosVendidos] = new InGreMeia((float) films[0].getPreIn());
+                            films[0].ingressosVendidos++;
+                            films[0].ingressosMeia++;
                         continuar = true;
                     }
                     if(ing == 1){
                         films[0].vetorIngressos[films[0].ingressosVendidos] = new InGreNormal((float) films[0].getPreIn());
                         films[0].ingressosVendidos++;
+                        films[0].ingressosPadrao++;
                         System.out.println(films[0].ingressosVendidos);
                         continuar = true;
                     }
@@ -146,12 +147,14 @@ public class Main {
                     if (ing == 0) {
                         films[1].vetorIngressos[films[1].ingressosVendidos] = new InGreMeia((float) films[1].getPreIn());
                         films[1].ingressosVendidos++;
+                        films[1].ingressosMeia++;
                         System.out.println(films[1].ingressosVendidos);
                         continuar = true;
                     }
                     if(ing == 1){
                         films[1].vetorIngressos[films[1].ingressosVendidos] = new InGreNormal((float) films[1].getPreIn());
                         films[1].ingressosVendidos++;
+                        films[1].ingressosPadrao++;
                         System.out.println(films[1].ingressosVendidos);
                         continuar = true;
                     }
@@ -177,11 +180,13 @@ public class Main {
                     if (ing == 0) {
                         films[2].vetorIngressos[films[2].ingressosVendidos] = new InGreMeia((float) films[2].getPreIn());
                         films[2].ingressosVendidos++;
+                        films[2].ingressosMeia++;
                         continuar = true;
                     }
                     if(ing == 1){
                         films[2].vetorIngressos[films[2].ingressosVendidos] = new InGreNormal((float) films[2].getPreIn());
                         films[2].ingressosVendidos++;
+                        films[2].ingressosPadrao++;
                         continuar = true;
                     }
                 }
@@ -216,18 +221,23 @@ public class Main {
                             null, Ingressos, Ingressos[0]
                     );
                     if (ing == 0) {
-                        Concert[0].vetorIngressos[Concert[0].ingressosVendidos] = new InGreMeia((float) Concert[0].getPreIn());
-                        Concert[0].ingressosVendidos++;
+                            Concert[0].vetorIngressos[Concert[0].ingressosVendidos] = new InGreMeia((float) Concert[0].getPreIn());
+                            Concert[0].ingressosVendidos++;
+                            Concert[0].ingressosMeia++;
                         continuar = true;
                     }
                     if(ing == 1){
-                        Concert[0].vetorIngressos[Concert[0].ingressosVendidos] = new InGreNormal((float) Concert[0].getPreIn());
-                        Concert[0].ingressosVendidos++;
+                            Concert[0].vetorIngressos[Concert[0].ingressosVendidos] = new InGreNormal((float) Concert[0].getPreIn());
+                            Concert[0].ingressosVendidos++;
+                            Concert[0].ingressosPadrao++;
                         continuar = true;
                     }
                     if(ing == 2){
-                        Concert[0].vetorIngressos[Concert[0].ingressosVendidos] = new InGreNormal((float) Concert[0].getPreIn());
-                        Concert[0].ingressosVendidos++;
+                        if (Concert[0].verificaIngresso()) {
+                            Concert[0].vetorIngressos[Concert[0].ingressosVendidos] = new InGreVip();
+                            Concert[0].ingressosVendidos++;
+                            Concert[0].ingressosVip++;
+                        }
                         continuar = true;
                     }
                     if(ing == 3){
@@ -247,20 +257,26 @@ public class Main {
                             JOptionPane.DEFAULT_OPTION,
                             JOptionPane.INFORMATION_MESSAGE,
                             null, Ingressos, Ingressos[0]
+
                     );
                     if (ing == 0) {
                         Concert[1].vetorIngressos[Concert[1].ingressosVendidos] = new InGreMeia((float) Concert[1].getPreIn());
                         Concert[1].ingressosVendidos++;
+                        Concert[1].ingressosMeia++;
                         continuar = true;
                     }
                     if(ing == 1){
                         Concert[1].vetorIngressos[Concert[1].ingressosVendidos] = new InGreNormal((float) Concert[1].getPreIn());
                         Concert[1].ingressosVendidos++;
+                        Concert[1].ingressosPadrao++;
                         continuar = true;
                     }
                     if(ing == 2){
-                        Concert[1].vetorIngressos[Concert[1].ingressosVendidos] = new InGreNormal((float) Concert[1].getPreIn());
+                    if (Concert[1].verificaIngresso()) {
+                        Concert[1].vetorIngressos[Concert[1].ingressosVendidos] = new InGreVip();
                         Concert[1].ingressosVendidos++;
+                        Concert[1].ingressosVip++;
+                    }
                         continuar = true;
                     }
                     if(ing == 3){
@@ -284,16 +300,21 @@ public class Main {
                     if (ing == 0) {
                         Concert[2].vetorIngressos[Concert[2].ingressosVendidos] = new InGreMeia((float) Concert[2].getPreIn());
                         Concert[2].ingressosVendidos++;
+                        Concert[2].ingressosMeia++;
                         continuar = true;
                     }
                     if(ing == 1){
                         Concert[2].vetorIngressos[Concert[2].ingressosVendidos] = new InGreNormal((float) Concert[2].getPreIn());
                         Concert[2].ingressosVendidos++;
+                        Concert[2].ingressosPadrao++;
                         continuar = true;
                     }
                     if(ing == 2){
-                        Concert[2].vetorIngressos[Concert[2].ingressosVendidos] = new InGreNormal((float) Concert[2].getPreIn());
-                        Concert[2].ingressosVendidos++;
+                        if (Concert[2].verificaIngresso()) {
+                            Concert[2].vetorIngressos[Concert[2].ingressosVendidos] = new InGreVip();
+                            Concert[2].ingressosVendidos++;
+                            Concert[2].ingressosVip++;
+                        }
                         continuar = true;
                     }
                     if(ing == 3){
@@ -328,18 +349,23 @@ public class Main {
                             null, Ingressos, Ingressos[0]
                     );
                     if (ing == 0) {
-                        Teat[0].vetorIngressos[Teat[0].ingressosVendidos] = new InGreMeia((float) Teat[0].getPreIn());
-                        Teat[0].ingressosVendidos++;
+                        if (Teat[0].verificaIngresso()) {
+                            Teat[0].vetorIngressos[Teat[0].ingressosVendidos] = new InGreMeia((float) Teat[0].getPreIn());
+                            Teat[0].ingressosVendidos++;
+                            Teat[0].ingressosMeia++;
+                        }
                         continuar = true;
                     }
                     if(ing == 1){
                         Teat[0].vetorIngressos[Teat[0].ingressosVendidos] = new InGreNormal((float) Teat[0].getPreIn());
                         Teat[0].ingressosVendidos++;
+                        Teat[0].ingressosPadrao++;
                         continuar = true;
                     }
                     if(ing == 2){
-                        Teat[0].vetorIngressos[Teat[0].ingressosVendidos] = new InGreNormal((float) Teat[0].getPreIn());
+                        Teat[0].vetorIngressos[Teat[0].ingressosVendidos] = new InGreVip();
                         Teat[0].ingressosVendidos++;
+                        Teat[0].ingressosVip++;
                         continuar = true;
                     }
                     if(ing == 3){
@@ -361,18 +387,23 @@ public class Main {
                             null, Ingressos, Ingressos[0]
                     );
                     if (ing == 0) {
-                        Teat[1].vetorIngressos[Teat[1].ingressosVendidos] = new InGreMeia((float) Teat[1].getPreIn());
-                        Teat[1].ingressosVendidos++;
+                        if (Teat[1].verificaIngresso()) {
+                            Teat[1].vetorIngressos[Teat[1].ingressosVendidos] = new InGreMeia((float) Teat[1].getPreIn());
+                            Teat[1].ingressosVendidos++;
+                            Teat[1].ingressosMeia++;
+                        }
                         continuar = true;
                     }
                     if(ing == 1){
                         Teat[1].vetorIngressos[Teat[1].ingressosVendidos] = new InGreNormal((float) Teat[1].getPreIn());
                         Teat[1].ingressosVendidos++;
+                        Teat[1].ingressosPadrao++;
                         continuar = true;
                     }
                     if(ing == 2){
-                        Teat[1].vetorIngressos[Teat[1].ingressosVendidos] = new InGreNormal((float) Teat[1].getPreIn());
+                        Teat[1].vetorIngressos[Teat[1].ingressosVendidos] = new InGreVip();
                         Teat[1].ingressosVendidos++;
+                        Teat[1].ingressosVip++;
                         continuar = true;
                     }
                     if(ing == 3){

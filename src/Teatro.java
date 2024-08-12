@@ -8,39 +8,50 @@ public class Teatro extends Evento implements Serializable {
         vetorIngressos = new Ingresso[QuanIn];
         setTipo("Teatro");
     }
+
     protected Ingresso[] IngressoTea = new Ingresso[QuanIn];
 
     @Override
     public boolean VerificacaoDosIngressos() {
         int NumVip = 0;
-        for(Ingresso atual : this.IngressoTea)
-            if(atual != null)
+        for (Ingresso atual : this.IngressoTea)
+            if (atual != null)
                 //retorna false caso mais que 20% dos ingressos sejam Vip
-                if(atual instanceof InGreVip && NumVip <=(QuanIn * 20)/100)
+                if (atual instanceof InGreVip && NumVip <= (QuanIn * 20) / 100)
                     NumVip++;
                 else
                     return false;
         return true;
     }
+
     @Override
     public double ReceiTot() {
         double total = 0;
-        for(Ingresso atual : this.IngressoTea){
-            if(atual!= null)
+        for (Ingresso atual : this.IngressoTea) {
+            if (atual != null)
                 total += atual.getPreco();
         }
         return total;
     }
+
     @Override
-    public String[] extrato(){
+    public String[] extrato() {
         String[] extratoComp = new String[3];
         int i = 0;
-        for(Ingresso atual : this.IngressoTea){
+        for (Ingresso atual : this.IngressoTea) {
             i++;
-            if(atual!= null)
+            if (atual != null)
                 extratoComp[i] = atual.toString();
-            extratoComp = Arrays.copyOf(extratoComp,(i + 1));
+            extratoComp = Arrays.copyOf(extratoComp, (i + 1));
 
-        }return extratoComp;
+        }
+        return extratoComp;
+    }
+
+    public boolean verificaIngresso() {
+        if (ingressosMeia >= (getQuanIn() * 1 / 100)) {
+            return false;
+        }
+        return true;
     }
 }
